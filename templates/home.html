@@ -2,11 +2,11 @@
 
 {% block content %}
 #header
-<header class="masthead bg-primary text-white text-center">
+<header class="masthead bg-secondary text-white text-center">
     <div class="container d-flex align-items-center flex-column">
 
       <!-- Masthead Avatar Image -->
-      <img class="masthead-avatar mb-5" src="{{ about.image.url }}" alt="Profile Image">
+      <img class="circle shadow p-3 mb-5 bg-white rounded" src="{{ about.image.url }}" alt="Profile Image">
 
       <!-- Masthead Heading -->
       <h1 class="masthead-heading text-uppercase mb-0">Holilurrahman</h1>
@@ -43,28 +43,30 @@
 
       <!-- About Section Content -->
       <div class="row">
-        <div class="col-lg-4 ml-auto">
+        <div class="col-lg-12 ml-auto">
           <p class="lead">{{about.short_description}}</p>
         </div>
-        <div class="col-lg-4 mr-auto">
-          <p class="lead">{{about.description}}</p>
-        </div>
+<!--        <div class="col-lg-4 mr-auto">-->
+<!--          <p class="lead">{{about.description}}</p>-->
+<!--        </div>-->
       </div>
 
       <!-- About Section Button -->
         <div class="text-center mt-4">
-          <button type="button" class="btn btn-xl btn-outline-light center-block" href="https://api.whatsapp.com/send?phone=6282251119621">
-            <i class="fab fa-whatsapp mr-2"></i>
-            Whatsapp
-          </button>
-          <a class="btn btn-xl btn-outline-light" href="https://drive.google.com/open?id=1PjQR-qs1aOjEIoNO6ZjfWefyoCn4HEJj">
-            <i class="fas fa-download mr-2"></i>
-            Download CV
-          </a>
-          <button type="button" class="btn btn-xl btn-outline-light center-block" href="mailto:holilrahman24@gmail.com">
-            <i class="fas fa-envelope mr-2"></i>
-            Email
-          </button>
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <a class="btn btn-xl btn-outline-light center-block" href="https://api.whatsapp.com/send?phone=6282251119621">
+                <i class="fab fa-whatsapp mr-2"></i>
+                Whatsapp
+              </a>
+              <a class="btn btn-xl btn-outline-light" href="https://drive.google.com/open?id=1PjQR-qs1aOjEIoNO6ZjfWefyoCn4HEJj">
+                <i class="fas fa-download mr-2"></i>
+                Download CV
+              </a>
+              <button type="button" class="btn btn-xl btn-outline-light center-block" href="mailto:holilrahman24@gmail.com">
+                <i class="fas fa-envelope mr-2"></i>
+                Email
+              </button>
+            </div>
 
         </div>
 
@@ -104,19 +106,151 @@
         <!-- Portfolio Item 1 -->
         {% for work in works %}
         <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal7">
+          <div class="portfolio-item mx-auto">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
+            </div>
+              <div class="card shadow p-3 mb-5 bg-white rounded" style="">
+                <img class="card-img-top" src="{{work.image.url}}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{work.title}}</h5>
+                  <p class="card-text"></p>
+                  <a href="{{work.link}}" class="btn btn-primary">Demo</a>
+                </div>
               </div>
-            </div>
-            <img class="img-fluid" src="{{ work.image.url }}" alt="">
-            <div class="gallery-text">
-              <h2>{{ work.title }}</h2>
-            </div>
           </div>
         </div>
         {% endfor %}
       </div>
 </section>
+
+<section class="page-section bg-primary text-white" id="education">
+    <div class="container">
+
+      <!-- Education Section Heading -->
+      <h2 class="page-section-heading text-center text-uppercase text-white mb-0">Pendidikan</h2>
+
+      <!-- Icon Divider -->
+      <div class="divider-custom divider-light"">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="divider-custom-line"></div>
+      </div>
+
+      <!-- Contact Section Form -->
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="resume-content">
+              <h3 class="mb-0">Institut Teknologi Kalimantan</h3>
+              <div class="subheading mb-3">Informatika</div>
+              <div>Artificial Intelligence -Network Engineer- Sofware Engineer</div>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">Agustus 2017 - Selesai</span>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
+            <div class="resume-content">
+              <h3 class="mb-0">SMK Negeri 6 Balikpapan</h3>
+              <div class="subheading mb-3">Teknik Komputer Dan Jaringan</div>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">Augustus 2014 - Mei 2017</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<section class="page-section align-items-center" id="skils">
+    <section class="ftco-section" id="Skills">
+			<div class="container">
+				<div class="row justify-content-center pb-5">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+          	<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Kemampuan</h2>
+          </div>
+          <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="divider-custom-line"></div>
+          </div>
+        </div>
+				<div class="row">
+					<div class="col-md-6 animate-box">
+						<div class="progress-wrap ftco-animate">
+							<h3>Photoshop</h3>
+							<div class="progress">
+							 	<div class="progress-bar color-1" role="progressbar" aria-valuenow="90"
+							  	aria-valuemin="0" aria-valuemax="100" style="width:50%">
+							    <span>50%</span>
+							  	</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 animate-box">
+						<div class="progress-wrap ftco-animate">
+							<h3>php</h3>
+							<div class="progress">
+							 	<div class="progress-bar color-2" role="progressbar" aria-valuenow="85"
+							  	aria-valuemin="0" aria-valuemax="100" style="width:65%">
+							    <span>65%</span>
+							  	</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 animate-box">
+						<div class="progress-wrap ftco-animate">
+							<h3>HTML5</h3>
+							<div class="progress">
+							 	<div class="progress-bar color-3" role="progressbar" aria-valuenow="95"
+							  	aria-valuemin="0" aria-valuemax="100" style="width:75%">
+							    <span>75%</span>
+							  	</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 animate-box">
+						<div class="progress-wrap ftco-animate">
+							<h3>CSS3</h3>
+							<div class="progress">
+							 	<div class="progress-bar color-4" role="progressbar" aria-valuenow="90"
+							  	aria-valuemin="0" aria-valuemax="100" style="width:75%">
+							    <span>75%</span>
+							  	</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 animate-box">
+						<div class="progress-wrap ftco-animate">
+							<h3>Adobe Illustrator</h3>
+							<div class="progress">
+							 	<div class="progress-bar color-5" role="progressbar" aria-valuenow="70"
+							  	aria-valuemin="0" aria-valuemax="100" style="width:70%">
+							    <span>70%</span>
+							  	</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 animate-box">
+						<div class="progress-wrap ftco-animate">
+							<h3>python</h3>
+							<div class="progress">
+							 	<div class="progress-bar color-6" role="progressbar" aria-valuenow="80"
+							  	aria-valuemin="0" aria-valuemax="100" style="width:50%">
+							    <span>50%</span>
+							  	</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+  </section>
 {% endblock %}

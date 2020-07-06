@@ -1,6 +1,8 @@
 from django.db import models
 
 #about me
+from django import forms
+
 
 class About(models.Model):
     objects = None
