@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block content %}
+#header
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+
+      <!-- Masthead Avatar Image -->
+      <img class="masthead-avatar mb-5" src="{{ about.image.url }}" alt="Profile Image">
+
+      <!-- Masthead Heading -->
+      <h1 class="masthead-heading text-uppercase mb-0">Holilurrahman</h1>
+
+      <!-- Icon Divider -->
+      <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="divider-custom-line"></div>
+      </div>
+
+      <!-- Masthead Subheading -->
+      <p class="masthead-subheading font-weight-light mb-0">Desain Grafis - Junior Developer Web </p>
+
+    </div>
+  </header>
+<!-- About Section -->
+  <section class="page-section bg-primary text-white mb-0" id="about">
+    <div class="container">
+
+      <!-- About Section Heading -->
+      <h2 class="page-section-heading text-center text-uppercase text-white">Tentang Saya</h2>
+
+      <!-- Icon Divider -->
+      <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="divider-custom-line"></div>
+      </div>
+
+      <!-- About Section Content -->
+      <div class="row">
+        <div class="col-lg-4 ml-auto">
+          <p class="lead">{{about.short_description}}</p>
+        </div>
+        <div class="col-lg-4 mr-auto">
+          <p class="lead">{{about.description}}</p>
+        </div>
+      </div>
+
+      <!-- About Section Button -->
+        <div class="text-center mt-4">
+          <button type="button" class="btn btn-xl btn-outline-light center-block" href="https://api.whatsapp.com/send?phone=6282251119621">
+            <i class="fab fa-whatsapp mr-2"></i>
+            Whatsapp
+          </button>
+          <a class="btn btn-xl btn-outline-light" href="https://drive.google.com/open?id=1PjQR-qs1aOjEIoNO6ZjfWefyoCn4HEJj">
+            <i class="fas fa-download mr-2"></i>
+            Download CV
+          </a>
+          <button type="button" class="btn btn-xl btn-outline-light center-block" href="mailto:holilrahman24@gmail.com">
+            <i class="fas fa-envelope mr-2"></i>
+            Email
+          </button>
+
+        </div>
+
+      </div>
+      <!-- <div class="text-center mt-4 btn-group role=group">
+        <a class="btn btn-xl btn-outline-light" href="https://api.whatsapp.com/send?phone=6282251119621">
+          <i class="fab fa-whatsapp mr-2"></i>
+          Whatsapp
+        </a>
+
+        <a class="btn btn-xl btn-outline-light" href="mailto:holilrahman24@gmail.com">
+          <i class="fas fa-envelope mr-2"></i>
+          Email
+        </a>
+      </div> -->
+    </div>
+  </section>
+
+<section class="page-section portfolio" id="portfolio">
+    <div class="container">
+
+      <!-- Portfolio Section Heading -->
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Project Web </h2>
+
+      <!-- Icon Divider -->
+      <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="divider-custom-line"></div>
+      </div>
+
+      <!-- Portfolio Grid Items -->
+      <div class="row">
+
+        <!-- Portfolio Item 1 -->
+        {% for work in works %}
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal7">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white">
+                <i class="fas fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="{{ work.image.url }}" alt="">
+            <div class="gallery-text">
+              <h2>{{ work.title }}</h2>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+</section>
+{% endblock %}
